@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 @interface SDEmojiManager : NSObject
+
+@property (nonatomic, strong) NSDictionary * emojiInfo;
+
+@property (nonatomic, strong) NSArray * emoji_List;
++ (SDEmojiManager *)getEmojiSingleton;
 
 @end

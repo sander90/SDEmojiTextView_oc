@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface SDEmojiContentCollectionViewCell : UICollectionViewCell
+@property(nonatomic, weak) UIImageView * emoji_imageView;
+
+@property (nonatomic, strong) NSDictionary * emoji_info;
+
++ (NSString * )reuseIdentifier;
+
+- (void)loadEmojiInfo:(NSDictionary * )info;
 
 @end

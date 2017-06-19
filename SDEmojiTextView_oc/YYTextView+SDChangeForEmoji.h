@@ -8,6 +8,14 @@
 
 #import <YYText/YYText.h>
 
-@interface YYTextView_SDChangeForEmoji : YYTextView
+@interface YYTextView (SDChangeForEmoji)
+
+@property (nonatomic, assign) NSRange textSelectedRange;
+
+@property (nonatomic, assign) BOOL canChangeTextSelectedRange;
+
+- (void)changeTextSelectedRange;
+
+- (void)insertEmojiText:(NSString *)emoji;
 
 @end

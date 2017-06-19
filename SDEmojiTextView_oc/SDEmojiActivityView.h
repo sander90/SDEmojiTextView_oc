@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SDEmojiDelegate <NSObject>
+
+- (void)EmojiDidSelectedWithEmojiTag:(NSString *)tag;
+
+
+@end
+
 @interface SDEmojiActivityView : UIView
+
+@property (nonatomic, weak) id<SDEmojiDelegate> delegate;
+
 
 @end
