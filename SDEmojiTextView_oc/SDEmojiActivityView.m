@@ -56,21 +56,19 @@
 
 
 #pragma mark - lazy
-
-
-
 - (UICollectionView *)emojiCollectionView
 {
     if (!_emojiCollectionView) {
         UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
+        flowLayout.itemSize =  CGSizeMake(30, 30);
         
         UICollectionView * theView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         [self addSubview:theView];
         theView.dataSource = self;
         theView.delegate = self;
-        
+        theView.backgroundColor = [UIColor whiteColor];
         [theView registerClass:[SDEmojiContentCollectionViewCell class] forCellWithReuseIdentifier:[SDEmojiContentCollectionViewCell reuseIdentifier]];
         [theView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self);
